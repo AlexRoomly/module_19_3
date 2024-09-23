@@ -1,0 +1,20 @@
+{% extends "menu.html" %}
+
+{% block pagename %}
+    <h1>Игры</h1>
+{% endblock %}
+{% block menu %}
+    {{block.super}}
+{% endblock %}
+{% block content %}
+    {% for game in mydict %}
+        <ul>
+            <li>{{ game.title }} | {{ game.description }}. Стоимость: {{ game.cost }} <button>Купить</button> </li>
+        </ul>
+    {% endfor %}
+{% endblock %}
+
+users1 = Buyer.objects.all().values()
+    n_users=len(users1)
+    for i in range(n_users):
+        users.append(users1[i]['name'])
